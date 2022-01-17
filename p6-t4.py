@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def circle (radius=10):
+def circle (radius=2):
   x= np.arange(-2*radius,2*radius,0.1)
 
   y =np.arange(-2*radius,2*radius,0.1)
