@@ -5,9 +5,9 @@ import matplotlib.animation as animation
 
 fig, ax = plt.subplots()
 
-def parabola_plotter1(a=0.1, b=0.1, c=0, title='parabola  plotter'):
+def parabola_plotter1(a=0.1, b=0.1, g=0, title='parabola  plotter'):
     x = np.arange(-20,20,0.5)
-    y = a*x**2 + b*x + c
+    y = -a*x**2 + b*x + g
 
     plt.plot(x, y, label='my parabola', marker='>', ms=0.1)
     plt.title(title)
@@ -15,18 +15,17 @@ def parabola_plotter1(a=0.1, b=0.1, c=0, title='parabola  plotter'):
 dots, = plt.plot([], [], '--', color='red', label='line')
 theta = np.linspace(0, 2*np.pi, 20)
 p = parabola_plotter1()
-frames1 = len(p[0])
+frames = len(p[0])
 def animate(i):
     dots.set_data(a + p[0][i], b + p[1][i])   
 ani = animation.FuncAnimation(fig,
                         animate,
                         
-                        frames1=frames1,
-                        frames2=frames2,
+                        frames=frames,
                         interval=30)
-def parabola_plotter2(a=0.1, b=0.1, c=0, title='parabola  plotter'):
+def parabola_plotter2(a=0.1, b=0.1, c=-80, title='parabola  plotter'):
     x = np.arange(-20,20,0.5)
-    y = -a*x**2 + b*x + c
+    y = a*x**2 + b*x + c
 
     plt.plot(x, y, label='my parabola', marker='>', ms=0.1)
     plt.title(title)
